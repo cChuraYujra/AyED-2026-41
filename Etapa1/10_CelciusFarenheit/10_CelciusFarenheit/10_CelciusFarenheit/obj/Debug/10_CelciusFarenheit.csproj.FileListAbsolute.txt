@@ -1,0 +1,5 @@
+C:\Users\Lab AyED\Documents\11_ChuraYujra\Etapa0\10_CelciusFarenheit\10_CelciusFarenheit\10_CelciusFarenheit\bin\Debug\10_CelciusFarenheit.exe.config
+C:\Users\Lab AyED\Documents\11_ChuraYujra\Etapa0\10_CelciusFarenheit\10_CelciusFarenheit\10_CelciusFarenheit\bin\Debug\10_CelciusFarenheit.exe
+C:\Users\Lab AyED\Documents\11_ChuraYujra\Etapa0\10_CelciusFarenheit\10_CelciusFarenheit\10_CelciusFarenheit\bin\Debug\10_CelciusFarenheit.pdb
+C:\Users\Lab AyED\Documents\11_ChuraYujra\Etapa0\10_CelciusFarenheit\10_CelciusFarenheit\10_CelciusFarenheit\obj\Debug\10_CelciusFarenheit.exe
+C:\Users\Lab AyED\Documents\11_ChuraYujra\Etapa0\10_CelciusFarenheit\10_CelciusFarenheit\10_CelciusFarenheit\obj\Debug\10_CelciusFarenheit.pdb

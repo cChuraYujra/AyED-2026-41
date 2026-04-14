@@ -1,0 +1,5 @@
+C:\Users\Lab AyED\Documents\11_ChuraYujra\Etapa0\21_SalarioTotal\21_SalarioTotal\21_SalarioTotal\bin\Debug\21_SalarioTotal.exe.config
+C:\Users\Lab AyED\Documents\11_ChuraYujra\Etapa0\21_SalarioTotal\21_SalarioTotal\21_SalarioTotal\bin\Debug\21_SalarioTotal.exe
+C:\Users\Lab AyED\Documents\11_ChuraYujra\Etapa0\21_SalarioTotal\21_SalarioTotal\21_SalarioTotal\bin\Debug\21_SalarioTotal.pdb
+C:\Users\Lab AyED\Documents\11_ChuraYujra\Etapa0\21_SalarioTotal\21_SalarioTotal\21_SalarioTotal\obj\Debug\21_SalarioTotal.exe
+C:\Users\Lab AyED\Documents\11_ChuraYujra\Etapa0\21_SalarioTotal\21_SalarioTotal\21_SalarioTotal\obj\Debug\21_SalarioTotal.pdb
