@@ -20,18 +20,46 @@ namespace ConsoleApplication1
             Console.Write("¿Tiene un bate? : ");
             string bate = Console.ReadLine();
             bate = bate.ToUpper();
-            Console.Write("¿Tiene agua? : ");
-            string agua = Console.ReadLine();
-            Console.Write("¿Tiene un botiquín? : ");
-            string botequín = Console.ReadLine();
-            botequín = botequín.ToUpper();
 
-            if (comida == "SI" && refugio == "SI" && comida == "SI" && bate == "SI" && agua == "SI")
+            if (comida == "SI" && refugio == "SI" && bate == "SI")
             {
                 Console.Write("Usted sobrevive al apocalipsis");
             }
-            else if (comida == "SI" && refugio == "SI" && comida == "SI" && bate == "SI" && agua == "NO")
-                Console.ReadKey();
+            else if (comida == "SI" && refugio == "SI" && bate == "NO")
+            {
+                Console.WriteLine("Muere por no tener protección");
+            }
+            else if (comida == "SI" && refugio == "NO" && bate == "NO")
+            {
+                Console.WriteLine("Muere por no tener protección");
+                Console.WriteLine("Muere por no tener un lugar seguro");
+            }
+            else if (comida == "NO" && refugio == "NO" && bate == "SI")
+            {
+                Console.WriteLine("Muere por no tener alimento");
+                Console.WriteLine("Muere por no tener un luggar seguro");
+            }
+            else if (comida == "SI" && refugio == "NO" && bate == "SI")
+            {
+                Console.WriteLine("Muere por no tener un lugar seguro");
+            }
+            else if (comida == "NO" && refugio == "SI" && bate == "SI")
+            {
+                Console.WriteLine("Muere por no tener alimento");
+            }
+            else if (comida == "NO" && refugio == "NO" && bate == "NO")
+            {
+                Console.WriteLine("Muere por no tener nada");
+            }
+            else if (comida == "SI" && refugio == "NO" && bate == "SI")
+            {
+                Console.WriteLine("Muere por no tener un lugar seguro");
+            }
+            else
+            {
+                Console.WriteLine("Ingrese las respuestas como est{an pedidas");
+            }
+        Console.ReadKey();
         }
     }
 }
