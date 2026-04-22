@@ -1,5 +1,0 @@
-C:\Users\Lab AyED\Documents\11_ChuraYujra\Etapa0\15_CuadradoCubo\15_CuadradoCubo\15_CuadradoCubo\bin\Debug\15_CuadradoCubo.exe.config
-C:\Users\Lab AyED\Documents\11_ChuraYujra\Etapa0\15_CuadradoCubo\15_CuadradoCubo\15_CuadradoCubo\bin\Debug\15_CuadradoCubo.exe
-C:\Users\Lab AyED\Documents\11_ChuraYujra\Etapa0\15_CuadradoCubo\15_CuadradoCubo\15_CuadradoCubo\bin\Debug\15_CuadradoCubo.pdb
-C:\Users\Lab AyED\Documents\11_ChuraYujra\Etapa0\15_CuadradoCubo\15_CuadradoCubo\15_CuadradoCubo\obj\Debug\15_CuadradoCubo.exe
-C:\Users\Lab AyED\Documents\11_ChuraYujra\Etapa0\15_CuadradoCubo\15_CuadradoCubo\15_CuadradoCubo\obj\Debug\15_CuadradoCubo.pdb

@@ -1,5 +1,0 @@
-C:\Users\Lab AyED\Documents\11_ChuraYujra\Etapa0\2_SuNombre\2_SuNombre\2_SuNombre\bin\Debug\2_SuNombre.exe.config
-C:\Users\Lab AyED\Documents\11_ChuraYujra\Etapa0\2_SuNombre\2_SuNombre\2_SuNombre\bin\Debug\2_SuNombre.exe
-C:\Users\Lab AyED\Documents\11_ChuraYujra\Etapa0\2_SuNombre\2_SuNombre\2_SuNombre\bin\Debug\2_SuNombre.pdb
-C:\Users\Lab AyED\Documents\11_ChuraYujra\Etapa0\2_SuNombre\2_SuNombre\2_SuNombre\obj\Debug\2_SuNombre.exe
-C:\Users\Lab AyED\Documents\11_ChuraYujra\Etapa0\2_SuNombre\2_SuNombre\2_SuNombre\obj\Debug\2_SuNombre.pdb

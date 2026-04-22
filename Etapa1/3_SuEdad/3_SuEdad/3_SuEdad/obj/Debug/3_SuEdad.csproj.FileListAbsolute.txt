@@ -1,5 +1,0 @@
-C:\Users\Lab AyED\Documents\11_ChuraYujra\Etapa0\3_SuEdad\3_SuEdad\3_SuEdad\bin\Debug\3_SuEdad.exe.config
-C:\Users\Lab AyED\Documents\11_ChuraYujra\Etapa0\3_SuEdad\3_SuEdad\3_SuEdad\bin\Debug\3_SuEdad.exe
-C:\Users\Lab AyED\Documents\11_ChuraYujra\Etapa0\3_SuEdad\3_SuEdad\3_SuEdad\bin\Debug\3_SuEdad.pdb
-C:\Users\Lab AyED\Documents\11_ChuraYujra\Etapa0\3_SuEdad\3_SuEdad\3_SuEdad\obj\Debug\3_SuEdad.exe
-C:\Users\Lab AyED\Documents\11_ChuraYujra\Etapa0\3_SuEdad\3_SuEdad\3_SuEdad\obj\Debug\3_SuEdad.pdb
