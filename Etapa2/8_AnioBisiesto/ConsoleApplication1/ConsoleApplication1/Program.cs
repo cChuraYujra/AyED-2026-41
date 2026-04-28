@@ -12,16 +12,15 @@ namespace ConsoleApplication1
         {
             Console.Write("Ingrese un año : ");
             int año = int.Parse(Console.ReadLine());
-            if (año % 4 == 0 || año % 100 == 0 && año % 400 == 0)
+            if (año % 4 == 0 || año % 400 == 0)
             {
-                Console.WriteLine("El año es bisiesto");
+                Console.WriteLine("EL año es bisiesto.");
             }
             else
             {
-                Console.WriteLine("El año no es bisiesto");
+                Console.WriteLine("EL año no es bisiesto");
             }
             Console.ReadKey();
-
         }
     }
 }
