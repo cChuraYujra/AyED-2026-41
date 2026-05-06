@@ -48,9 +48,9 @@ namespace ConsoleApplication1
                         Console.Clear();
                         break;
                     case 4:
+                        Console.Clear();
                         Console.WriteLine("See you together!!!");
                         Console.ReadKey();
-                        Console.Clear();
                         break;
                     default:
                         Console.Write("Error ingrese un numero del menú");
