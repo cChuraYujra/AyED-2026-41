@@ -27,16 +27,26 @@ namespace ConsoleApplication1
             Console.WriteLine("Dia : " + dias + "        Comida cruda : " + comida_cruda + "     Fogata : " + fogata);
             Console.WriteLine("Vida : " + vida + "      Comida cocida : " + comida_cocinada + "  Materiales : " + materiales);
             Console.WriteLine("Hambre : " + hambre + "   Refugio : " + refugio);
+            Console.WriteLine("\nEn esta Isla el clima es muy extraño, puede ir en tu contra.");
             Console.Write("\nPresiona cualquier tecla para continuar.");
             Console.ReadKey();
             Console.Clear();
             while (opcion != 8)
             {
-                Random rand = new Random();
-                int comida = rand.Next(1, 100);
-
                 Random rnd = new Random();
+                int comida = rnd.Next(1, 100);
+
+                Random rand = new Random();
                 int explorar = rnd.Next(1, 100);
+
+                Random i = new Random();
+                int clima = rnd.Next(1, 100);
+
+                Random x = new Random();
+                int calor = rnd.Next(1, 110);
+
+                Random a = new Random();
+                int efectos = rnd.Next(1, 100);
 
                 Console.WriteLine("Datos del dia");
                 Console.WriteLine("Dia : " + dias + "        Comida cruda : " + comida_cruda + "     Fogata : " + fogata);
@@ -45,6 +55,8 @@ namespace ConsoleApplication1
 
                 Console.Write("\nEstas pensando en...\n1. Buscar comida\n2. Explorar la isla\n3. Construir un refugio\n4. Encender una fogata\n5. Cocinar comida\n6. Comer comida cocida\n7. Descansar\n8. Salir\n¿Qué haras?(Ingresar el numero que quieras hacer) : ");
                 opcion = int.Parse(Console.ReadLine());
+
+                //Decisiones
                 switch (opcion)
                 {
                     case 0:
@@ -103,18 +115,18 @@ namespace ConsoleApplication1
                         Console.Clear();
                         break;
                     case 3:
-                        Console.WriteLine("\nHaz intentado construir un refugio para protegerte. Pero...");
+                        Console.WriteLine("\nHaz intentado construir un refugio para protegerte.");
                         Console.ReadKey();
                         if (refugio == false)
                         {
-                            Console.WriteLine("\ncomo no tienes un refugio construyes uno.");
+                            Console.WriteLine("\nConstruyes un refugio");
                             refugio = true;
                             dias++;
                             hambre = hambre - 2;
                         }
                         else
                         {
-                            Console.WriteLine("\nya tienes un refugio, por lo que te quedas sin hacer nada");
+                            Console.WriteLine("\nYa tienes un refugio, por lo que te quedas sin hacer nada");
                             dias++;
                             hambre = hambre - 2;
                         }
@@ -157,14 +169,15 @@ namespace ConsoleApplication1
                             comida_cruda--;
                             dias++;
                             hambre = hambre - 2;
+                            Console.ReadKey();
                         }
                         else
                         {
                             Console.WriteLine("\nTe faltran cosas para cocinar la carne cruda");
                             dias++;
                             hambre = hambre - 2;
+                            Console.ReadKey();
                         }
-                        Console.ReadKey();
                         Console.Clear();
                         break;
                     case 6:
@@ -195,16 +208,16 @@ namespace ConsoleApplication1
                             vida = vida + 3;
                             dias++;
                             hambre = hambre - 2;
+                            Console.ReadKey();
                         }
                         else if (refugio == false)
                         {
                             Console.WriteLine("\nTe duermes");
-
                             vida++;
                             dias++;
                             hambre = hambre - 2;
+                            Console.ReadKey();
                         }
-                        Console.ReadKey();
                         Console.Clear();
                         break;
                     case 8:
@@ -219,7 +232,6 @@ namespace ConsoleApplication1
                         Console.Clear();
                         break;
                 }
-
                 if (hambre < 0)
                 {
                     vida = vida - 2;
@@ -233,19 +245,66 @@ namespace ConsoleApplication1
                 {
                     vida = 0;
                 }
-                if(vida < 1)
+                //Códigos de finales
+                if (vida < 1)
                 {
                     Console.WriteLine("PERDISTE");
                     Console.ReadKey();
                     Console.Clear();
                     opcion = 8;
                 }
-                else if (dias == 10 && vida > 0)
+                else if (dias == 20 && vida > 0)
                 {
                     Console.WriteLine("GANASTE");
                     Console.ReadKey();
                     Console.Clear();
-                    opcion = 8; 
+                    opcion = 8;
+                }
+
+                //CLIMA
+                if (clima >= 71 && clima <= 80)
+                {
+                    Console.WriteLine("Haz visto el cielo, está nublado. Después de unos minutos gotas empiezan a caer sobre tu cara\n");
+                    if(fogata == true)
+                    {
+                        Console.WriteLine("La lluvia provocó que tu fogata se apague. La fogata ya no sirve");
+                        fogata = false;
+                    }
+                    Console.ReadKey();
+                }
+                else if (clima >= 81 && clima <= 90)
+                {
+                    Console.WriteLine("Las nubes se juntaron mucho, parece que va a haber una tormenta. Cuidado puede que te parta un rayo.\n");
+                    if(refugio == true || fogata == true)
+                    {
+                        Console.WriteLine("Por suerte no pasó nada. Pero la tormenta provocó la destrucción de tus cosas");
+                        fogata = false;
+                        refugio = false;
+                    }
+                    Console.ReadKey();
+                }
+                else if (clima >= 91 && clima <=100)
+                {
+                    Console.WriteLine("Las nubes se juntaron mucho, parece que va a haber una tormenta. Cuidado puede que te parta un rayo.\n");
+                    Console.ReadKey();
+                    Console.WriteLine("Que mala suerte, te partió un rayo. Perdiste\n");
+                    Console.ReadKey();
+                    opcion = 8;
+                }
+                else if (clima >= 101 && clima <= 110)
+                {
+                    Console.WriteLine("Hace mucho calor. Puede que la carne se te ponga mal\n");
+                    vida--;
+                    Console.ReadKey();
+                    if (calor >= 80 && calor <= 100 && comida_cruda > 0)
+                    {
+                        Console.WriteLine("Se te descompuso toda la carne...\n");
+                        comida_cocinada = comida_cocinada - 10;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Por suerte no pasó nada\n");
+                    }
                 }
             }
         }
