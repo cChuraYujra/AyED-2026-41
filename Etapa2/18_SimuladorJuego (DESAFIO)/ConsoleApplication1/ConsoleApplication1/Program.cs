@@ -40,15 +40,9 @@ namespace ConsoleApplication1
                 int explorar = rnd.Next(1, 100);
 
                 Random i = new Random();
-                int clima = rnd.Next(1, 100);
+                double clima = rnd.Next(1, 100);
 
-                Random x = new Random();
-                int calor = rnd.Next(1, 110);
-
-                Random a = new Random();
-                int efectos = rnd.Next(1, 100);
-
-                Console.WriteLine("Datos del dia");
+                Console.WriteLine("Datos del dia :\n");
                 Console.WriteLine("Dia : " + dias + "        Comida cruda : " + comida_cruda + "     Fogata : " + fogata);
                 Console.WriteLine("Vida : " + vida + "      Comida cocida : " + comida_cocinada + "  Materiales : " + materiales);
                 Console.WriteLine("Hambre : " + hambre + "   Refugio : " + refugio);
@@ -245,7 +239,7 @@ namespace ConsoleApplication1
                 {
                     vida = 0;
                 }
-                //Códigos de finales
+
                 if (vida < 1)
                 {
                     Console.WriteLine("PERDISTE");
@@ -272,7 +266,7 @@ namespace ConsoleApplication1
                     }
                     Console.ReadKey();
                 }
-                else if (clima >= 81 && clima <= 90)
+                else if (clima >= 81 && clima <= 89.9)
                 {
                     Console.WriteLine("Las nubes se juntaron mucho, parece que va a haber una tormenta. Cuidado puede que te parta un rayo.\n");
                     if(refugio == true || fogata == true)
@@ -283,7 +277,7 @@ namespace ConsoleApplication1
                     }
                     Console.ReadKey();
                 }
-                else if (clima >= 91 && clima <=100)
+                else if (clima == 90)
                 {
                     Console.WriteLine("Las nubes se juntaron mucho, parece que va a haber una tormenta. Cuidado puede que te parta un rayo.\n");
                     Console.ReadKey();
@@ -291,12 +285,12 @@ namespace ConsoleApplication1
                     Console.ReadKey();
                     opcion = 8;
                 }
-                else if (clima >= 101 && clima <= 110)
+                else if (clima >= 91 && clima <= 95)
                 {
                     Console.WriteLine("Hace mucho calor. Puede que la carne se te ponga mal\n");
                     vida--;
                     Console.ReadKey();
-                    if (calor >= 80 && calor <= 100 && comida_cruda > 0)
+                    if (clima >= 96 && clima <= 100 && comida_cruda > 0)
                     {
                         Console.WriteLine("Se te descompuso toda la carne...\n");
                         comida_cocinada = comida_cocinada - 10;
