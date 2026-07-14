@@ -42,6 +42,7 @@ namespace _5_CentroPM
                                 {
                                     Console.WriteLine("\nPokémon registrado correctamente en la posición " + posicion);
                                     enLista++;
+                                    posicion++;
                                 }
                             }
                             while (vidaPokemones[posicion] > 100)
