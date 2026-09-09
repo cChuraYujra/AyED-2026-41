@@ -20,10 +20,10 @@ namespace ConsoleApplication1
             int objetos = 2;
             int nivel = 3;
             int estado = 4;
-            int tipoMapa;
-            int difilcutad;
-            int etapa;
-            int articulos;
+            int tipoMapa = 0;
+            int difilcutad = 0;
+            int etapa = 0;
+            int articulos = 0;
             do
             {
                 Console.Clear();
@@ -38,11 +38,11 @@ namespace ConsoleApplication1
                 Console.WriteLine("8. Salir");
                 Console.Write("\nOpción: ");
                 opcion = int.Parse(Console.ReadLine());
+                contador++;
                 switch (opcion)
                 {
                     case 1:
-                        contador++;
-                        PERO[mision, ID] = contador;
+                        PERO[mision, ID] += contador;
 
                         Console.Write("\nELije el mapa : \n\n1. Hagwarts\n2. La Casa del Viejo\n3. El Laboratorio\n\nMapa : ");
                         tipoMapa = int.Parse(Console.ReadLine());
@@ -107,7 +107,7 @@ namespace ConsoleApplication1
                         Console.WriteLine("6. Promedio de pegrilo por mapa");
                         Console.WriteLine("7. Filtrar por mapa");
                         Console.WriteLine("8. Salir");
-                        Console.WriteLine("\nOpción: " + opcion);                                   
+                        Console.WriteLine("\nOpción: " + opcion);
                         Console.WriteLine();
                         for (int i = 0; i < mision + 1; i++)
                         {
@@ -116,75 +116,31 @@ namespace ConsoleApplication1
                                 Console.Write(PERO[i, j] + " ");
                             }
                             Console.WriteLine();
-                        }                    
-                        Console.WriteLine("\nID : " + contador);
-                        Console.Write("Tipo de Mapa : ");
-                        if (tipoMapa == 1)
-                        {
-                            Console.WriteLine("Hagwarts");
-                        }
-                        else if (tipoMapa == 2)
-                        {
-                            Console.WriteLine("La Casa del Viejo");
-                        }
-                        else
-                        {
-                            Console.WriteLine("El Laboratorio");
-                        }
-                        Console.WriteLine("Objetos a extraer : " + articulos);
-                        Console.Write("Nivel de peligro : ");
-                        if (difilcutad == 1)
-                        {
-                            Console.WriteLine("Muy Facíl");
-                        }
-                        else if (difilcutad == 2)
-                        {
-                            Console.WriteLine("Facíl");
-                        }
-                        else if (difilcutad == 3)
-                        {
-                            Console.WriteLine("Normal");
-                        }
-                        else if (difilcutad == 4)
-                        {
-                            Console.WriteLine("Dificíl");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Imposible");
-                        }
-                        Console.Write("Estado : ");
-                        if(etapa == 0)
-                        {
-                            Console.WriteLine("Pendiente");
-                        }
-                        else if (etapa == 1)
-                        {
-                            Console.WriteLine("En Curso");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Finalizado");
                         }
                         mision++;
                         Console.WriteLine(contador);
                         break;
                     case 2:
-                        for (int i = 0; i < contador; i++)
+                        for(int i = 0; i < contador - 1; i++)
                         {
-                            
-                            for (int j = 0; j < PERO.GetLength(1); j++)
+                            for(int j = 0; j < PERO.GetLength(1); j++)
                             {
-                                Console.Write(PERO[i, j] + " ");
+                                Console.Write(PERO[i, j] + " ");                                                               
                             }
-                            Console.WriteLine();
-                            for(int x = 0; x < contador; x++)
+                            Console.WriteLine("\nID : " + PERO[i, ID]);
+                            Console.WriteLine("Mapa : ");
+                            if (PERO[j, mapas] == 1)
                             {
-                                for(int y = 0; y < PERO.GetLength(1); y++)
-                                {
-
-                                }
+                                Console.Write("Hagwarts");
                             }
+                            else if (PERO[j, mapas] == 2)
+                            {
+                                Console.Write("La Casa del Viejo");
+                            }
+                            else
+                            {
+                                Console.Write("El Laboratorio");
+                            }                                                          
                         }
                         break;
                     case 3:

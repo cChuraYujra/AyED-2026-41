@@ -30,8 +30,7 @@ namespace _3_HotSale
             foreach (double productos in CantProductos)
             {               
                 Console.Write(productos + " , ");
-            }
-                     
+            }                     
             Console.ReadKey();
         }
     }
