@@ -14,10 +14,22 @@ namespace ConsoleApplication1
             int disponibles = 80;
             int ocupados = 0;
             int contador = 0;
+            int contador2 = 0;
+
+            int asiento = 0;
+            int TipoAsieto = 1;
+            int nombre = 2;
+            int apellido = 3;
+            int edad = 4;
+            int DNI = 5;
+            int nacionalidad = 6;
 
             int[,] asientos = new int[20, 4];
+            int[,] asientos2 = new int[20, 4];
 
             string[,] tabla = new string[81, 8];
+
+            string[,] Lista = new string[81, 2];
 
             while(opc != 7)
             {
@@ -55,7 +67,6 @@ namespace ConsoleApplication1
                             }
                         }
 
-
                         for (int x = 0; x < asientos.GetLength(0); x++)
                         {
                             for (int y = 0; y < asientos.GetLength(1); y++)
@@ -66,17 +77,40 @@ namespace ConsoleApplication1
                         }
 
 
-                        Console.WriteLine("\nTABLA DE ASIENTOS\n");
-                        Console.WriteLine("N° Asiento|Tipo de Asiento|Nombre|Apellido|Edad|DNI|Nacionalidad|Ocupado");
-                        for(int i = 0; i < tabla.GetLength(0); i++)
+                        for(int i = 0; i < asientos2.GetLength(0); i++)
                         {
-                            for(int j = 0; j < tabla.GetLength(1); j++)
+                            for(int j = 0; j < asientos2.GetLength(1); i++)
                             {
-
+                                contador2++;
+                                asientos2[i, j] += contador2; 
                             }
                         }
-                        
-                        
+
+
+                        Console.WriteLine("\nTABLA DE ASIENTOS\n");
+
+                        for(int i = 0; i < tabla.GetLength(0); i++)
+                        {
+                            for (int j = 0; j < tabla.GetLength(1); j++)
+                            { 
+                                Console.Write(asientos[asiento, j] + " ");
+                                Console.ReadKey();                            
+                                if (asientos[i, j] >= 1 && asientos[asiento, j] <= 20)
+                                {
+                                    Console.Write("Primera Clase");
+                                }
+                                else if(asientos[asiento, j] >= 40 && asientos[asiento, j]<= 43)
+                                {
+                                    Console.Write("Salida de Emergencia");
+                                }
+                                else
+                                {
+                                    Console.Write("Económico");
+                                }
+                            }
+                        }
+
+                        //N° Asiento|Tipo de Asiento|Nombre|Apellido|Edad|DNI|Nacionalidad|Ocupado
                         Console.ReadKey();
                         Console.Clear();
                         break;

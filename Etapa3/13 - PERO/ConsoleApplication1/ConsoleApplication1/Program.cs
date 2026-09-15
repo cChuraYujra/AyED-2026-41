@@ -121,33 +121,34 @@ namespace ConsoleApplication1
                         Console.WriteLine(contador);
                         break;
                     case 2:
-                        for(int i = 0; i < contador - 1; i++)
+                        for (int i = 0; i < contador - 1; i++)
                         {
-                            for(int j = 0; j < PERO.GetLength(1); j++)
+                            for (int j = 0; j < PERO.GetLength(1); j++)
                             {
-                                Console.Write(PERO[i, j] + " ");                                                               
+                                Console.Write(PERO[i, j] + " ");
                             }
-                            Console.WriteLine("\nID : " + PERO[i, ID]);
-                            Console.WriteLine("Mapa : ");
-                            if (PERO[j, mapas] == 1)
-                            {
-                                Console.Write("Hagwarts");
-                            }
-                            else if (PERO[j, mapas] == 2)
-                            {
-                                Console.Write("La Casa del Viejo");
-                            }
-                            else
-                            {
-                                Console.Write("El Laboratorio");
-                            }                                                          
+                            Console.WriteLine();
                         }
+
                         break;
                     case 3:
-                        // Punto 3: Cambiar estado de misión
+                        Console.WriteLine("Seleccione la misión a ascender : ");
+                        int a = int.Parse(Console.ReadLine());
+                        a--;
+                        PERO[a, estado] += 1;
+                        if (PERO[a, estado] > 2)
+                        {
+                            PERO[a, estado] = 2;
+                        }
+                        for (int j = 0; j < PERO.GetLength(1); j++)
+                        {
+                            Console.Write(PERO[a, j] + " ");
+                        }
+                        Console.ReadKey();
+                        mision--;
                         break;
                     case 4:
-                        // Punto 4: Listar misiones en curso
+                        
                         break;
                     case 5:
                         // Punto 5: Misión con más objetos a extraer
@@ -169,6 +170,7 @@ namespace ConsoleApplication1
                 Console.ReadKey();
                 
             } while (opcion != 8);
+            mision--;
             Console.ReadKey();
         }
     }
