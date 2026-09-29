@@ -10,20 +10,27 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            int mision = 0;
-            int[,] PERO = new int[30, 5];
-            Random rand = new Random();
-            int opcion;
-            int contador = 0;
-            int ID = 0;
-            int mapas = 1;
+            //Variables para la matriz
+            int id = 0;
+            int mapa = 1;
             int objetos = 2;
             int nivel = 3;
             int estado = 4;
-            int tipoMapa = 0;
-            int difilcutad = 0;
-            int etapa = 0;
-            int articulos = 0;
+
+            //Variables para el código
+            int mision = 0;
+            int mapas;
+            int dificultad;
+            int periodo;
+
+            //Matriz
+            int[,] PERO = new int[30, 5];
+
+
+            int contador = 0;
+            int opcion;
+            Random rand = new Random();
+
             do
             {
                 Console.Clear();
@@ -38,90 +45,55 @@ namespace ConsoleApplication1
                 Console.WriteLine("8. Salir");
                 Console.Write("\nOpción: ");
                 opcion = int.Parse(Console.ReadLine());
-                contador++;
+
                 switch (opcion)
                 {
                     case 1:
-                        PERO[mision, ID] += contador;
-
-                        Console.Write("\nELije el mapa : \n\n1. Hagwarts\n2. La Casa del Viejo\n3. El Laboratorio\n\nMapa : ");
-                        tipoMapa = int.Parse(Console.ReadLine());
-
-                        if (tipoMapa < 1 || tipoMapa > 3)
+                        if (contador > 30)
                         {
-                            while (tipoMapa < 1 || tipoMapa > 3)
-                            {
-                                Console.WriteLine("Ese mapa no es de este juegazo.");
-                                Console.Write("\nIntente de nuevo : ");
-                                tipoMapa = int.Parse(Console.ReadLine());
-                            }
+                            Console.Write("¡Demasiadas misiones!");
                         }
-
-                        PERO[mision, mapas] = tipoMapa;
-
-                        articulos = rand.Next(1, 70);
-
-                        PERO[mision, objetos] = articulos;
-
-                        Console.WriteLine("\nIngrese la dificultad del nivel\n\n1. Muy Facíl\n2. Facíl\n3. Normal\n4. Dificíl\n5. Imposible\n");
-                        Console.Write("Dificultad : ");
-                        difilcutad = int.Parse(Console.ReadLine());
-
-                        if (difilcutad > 5)
+                        else
                         {
-                            while (difilcutad > 5)
+                            contador++;
+                            PERO[mision, id] = contador;
+
+                            Console.Write("\n---MAPAS A ELIJIR---\n\n1. Hagwarts\n2. La Casa del Viejo\n3. El Laboratorio\n\nElija un mapa para la misión : ");
+                            mapas = int.Parse(Console.ReadLine());
+
+                            if (mapas < 1 || mapas > 3)
                             {
-                                Console.WriteLine("Este nivel es demasiado PEGRILOSO...");
-                                Console.Write("\nIntente de nuevo : ");
-                                difilcutad = int.Parse(Console.ReadLine());
+                                while (mapas < 1 || mapas > 3)
+                                {
+                                    Console.WriteLine("Ese mapa no es de este juegazo.");
+                                    Console.Write("\nIntente de nuevo : ");
+                                    mapas = int.Parse(Console.ReadLine());
+                                }
                             }
-                        }
-                        PERO[mision, nivel] = difilcutad;
+                            PERO[mision, mapa] = mapas;
 
-                        Console.WriteLine("Ingrese el estado de la misión\n\n0. Pendiente\n1. En curso\n2. Finalizado\n");
-                        Console.Write("Estado : ");
-                        etapa = int.Parse(Console.ReadLine());
+                            PERO[mision, objetos] = rand.Next(1, 70);
 
-                        if (etapa > 2)
-                        {
-                            while (etapa > 2)
+                            Console.Write("\n--DIFICULTAD--\n\n1. Muy Fácil\n2. Facíl\n3. Nromal\n4. Dificíl\n5. Que dios se apiare de nosotros...\n\nELija una dificultad : ");
+                            dificultad = int.Parse(Console.ReadLine());
+                            if (dificultad > 5)
                             {
-                                Console.WriteLine("Por favor ingrese una opción válida...\n");
-                                Console.Write("Estado : ");
-                                etapa = int.Parse(Console.ReadLine());
+                                while (dificultad > 5)
+                                {
+                                    Console.WriteLine("Este nivel es demasiado PEGRILOSO...");
+                                    Console.Write("\nIntente de nuevo : ");
+                                    dificultad = int.Parse(Console.ReadLine());
+                                }
                             }
+                            PERO[mision, nivel] = dificultad;                          
+                            PERO[mision, estado] = 0;
+
+                            Console.WriteLine("\nDATOS DE LA NUEVA MISIÓN AÑADIDAS AL SISTEMA.");
+                            mision++;
                         }
-
-                        PERO[mision, estado] = etapa;
-
-
-                        Console.WriteLine("\nPresiona cualquier botón");
-                        Console.ReadLine();
-                        Console.Clear();
-                        Console.WriteLine("==== MENÚ DEL P.E.R.O. ====");
-                        Console.WriteLine("1. Registrar nueva misión");
-                        Console.WriteLine("2. Ver todas las misiones");
-                        Console.WriteLine("3. Cambiar estado de una misión");
-                        Console.WriteLine("4. Listar misiones en curso");
-                        Console.WriteLine("5. Misión con más objetos a extraer");
-                        Console.WriteLine("6. Promedio de pegrilo por mapa");
-                        Console.WriteLine("7. Filtrar por mapa");
-                        Console.WriteLine("8. Salir");
-                        Console.WriteLine("\nOpción: " + opcion);
-                        Console.WriteLine();
-                        for (int i = 0; i < mision + 1; i++)
-                        {
-                            for (int j = 0; j < PERO.GetLength(1); j++)
-                            {
-                                Console.Write(PERO[i, j] + " ");
-                            }
-                            Console.WriteLine();
-                        }
-                        mision++;
-                        Console.WriteLine(contador);
                         break;
                     case 2:
-                        for (int i = 0; i < contador - 1; i++)
+                        for (int i = 0; i < mision; i++)
                         {
                             for (int j = 0; j < PERO.GetLength(1); j++)
                             {
@@ -129,48 +101,107 @@ namespace ConsoleApplication1
                             }
                             Console.WriteLine();
                         }
-
                         break;
                     case 3:
-                        Console.WriteLine("Seleccione la misión a ascender : ");
+                        Console.Write("Ingrese la mision a ascender : ");
                         int a = int.Parse(Console.ReadLine());
                         a--;
                         PERO[a, estado] += 1;
+                        if (a > contador)
+                        {
+                            while (a > contador)
+                            {
+                                Console.WriteLine("Intente de nuevo.\n");
+                                Console.Write("Estado : ");
+                                a = int.Parse(Console.ReadLine());
+                            }
+                        }
+
                         if (PERO[a, estado] > 2)
                         {
                             PERO[a, estado] = 2;
+                            Console.Write("Mision " + (a + 1) + " ya no se puede ascender mas.");
                         }
-                        for (int j = 0; j < PERO.GetLength(1); j++)
+                        else
                         {
-                            Console.Write(PERO[a, j] + " ");
+                            Console.Write("Misión " + (a + 1) + " a sido ascendido.");
                         }
-                        Console.ReadKey();
-                        mision--;
+
                         break;
                     case 4:
-                        
+                        Console.WriteLine("Las misiones en estado de En Curso son : ");
+                        for (int i = 0; i < mision; i++)
+                        {
+                            for (int j = 0; j < PERO.GetLength(1); j++)
+                            {
+                                if(PERO[i, estado] == 1)
+                                {
+                                    Console.Write(PERO[i, j] + " ");
+                                }
+                            }
+                            Console.WriteLine();
+                        }
                         break;
                     case 5:
-                        // Punto 5: Misión con más objetos a extraer
+                        Console.WriteLine("La misión con más objetos a recuperar es : ");
+                        int mayor = 0;
+                        int b = 0;
+                        for(int i = 0; i < mision; i++)
+                        {
+                            for(int j = 0; j < PERO.GetLength(1); j++)
+                            {
+                                if(PERO[b, objetos] > mayor)
+                                {
+                                    mayor = PERO[b, objetos];
+                                    b++;
+                                }
+                                else
+                                {
+                                    b++;
+                                }
+                            }
+                        }
+                        for(int i = 0; i < mision; i++)
+                        {
+                            for(int j = 0; j < PERO.GetLength(1); j++)
+                            {
+                                if(PERO[i, objetos] == mayor)
+                                {
+                                    Console.Write(PERO[i, j] + " ");
+                                }
+                            }
+                        }
                         break;
                     case 6:
                         // Punto 6: Promedio de peligro por mapa
                         break;
                     case 7:
-                        // Punto 7: Filtrar por mapa
+                        Console.Write("Ingrese el mapa que quieras buscar : ");
+                        int filtrado = int.Parse(Console.ReadLine());
+
+                        for (int i = 0; i < mision; i++)
+                        {
+                            for(int j = 0; j < PERO.GetLength(1); j++)
+                            {
+                                if(PERO[i, mapa] == filtrado)
+                                {
+                                    Console.Write(PERO[i, j] + " ");
+                                }                                
+                            }
+                            Console.WriteLine();
+                        }
                         break;
                     case 8:
                         Console.WriteLine("Saliendo del sistema... ¡Esperemos que el PERO no sea letal!");
-                break;
+                        break;
                     default:
                         Console.WriteLine("Opción no válida. Intente de nuevo.");
                         break;
                 }
                 Console.WriteLine("\nPresione una tecla para continuar...");
                 Console.ReadKey();
-                
+
             } while (opcion != 8);
-            mision--;
             Console.ReadKey();
         }
     }

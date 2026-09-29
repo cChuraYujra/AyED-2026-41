@@ -109,7 +109,6 @@ namespace ConsoleApplication1
                                 }
                             }
                         }
-
                         //N° Asiento|Tipo de Asiento|Nombre|Apellido|Edad|DNI|Nacionalidad|Ocupado
                         Console.ReadKey();
                         Console.Clear();

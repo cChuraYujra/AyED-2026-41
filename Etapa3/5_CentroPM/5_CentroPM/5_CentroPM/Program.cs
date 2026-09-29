@@ -188,13 +188,13 @@ namespace _5_CentroPM
                         Console.WriteLine("Vida : " + menor);
                         Console.ReadKey();
                         Console.Clear();
-                        break;
-                    case 9:
-                        int promedio = 0;
-                        for (int i = 0; i < enLista; i++)
+            
                         {
                             promedio += vidaPokemones[i];
-                        }
+                              break;
+                    case 9:
+                        int promedio = 0;
+                        for (int i = 0; i < enLista; i++)      }
                         promedio = promedio / enLista;
                         if (promedio <= 30)
                         {
