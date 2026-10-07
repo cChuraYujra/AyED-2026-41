@@ -21,7 +21,7 @@ namespace ConsoleApplication1
             int mision = 0;
             int mapas;
             int dificultad;
-            int periodo;
+            int articulos = 0;
 
             //Matriz
             int[,] PERO = new int[30, 5];
@@ -71,8 +71,8 @@ namespace ConsoleApplication1
                                 }
                             }
                             PERO[mision, mapa] = mapas;
-
-                            PERO[mision, objetos] = rand.Next(1, 70);
+                            articulos = rand.Next(1, 70);
+                            PERO[mision, objetos] = articulos;
 
                             Console.Write("\n--DIFICULTAD--\n\n1. Muy Fácil\n2. Facíl\n3. Nromal\n4. Dificíl\n5. Que dios se apiare de nosotros...\n\nELija una dificultad : ");
                             dificultad = int.Parse(Console.ReadLine());
@@ -173,7 +173,43 @@ namespace ConsoleApplication1
                         }
                         break;
                     case 6:
-                        // Punto 6: Promedio de peligro por mapa
+                            for (int map = 1; mapa <= 3; mapa++)
+                            {
+                               int suma = 0;
+                               int cantidadMapa = 0;
+    
+                              for (int i = 0; i < articulos; i++)
+                              {
+                                if (PERO[i, 1] == mapa)
+                                {
+                                    suma = suma + PERO[i, 3];
+                                    cantidadMapa++;
+                                }
+                            }
+
+                            if (mapa == 1)
+                            {
+                                Console.Write("Hagwarts: ");
+                            }
+                            else if (mapa == 2)
+                            {
+                                Console.Write("La Casa del Viejo: ");
+                            }
+                            else
+                            {
+                                Console.Write("El Laboratorio: ");
+                            }
+
+                            if (cantidadMapa > 0)
+                            {
+                                int promedio = (int)suma / cantidadMapa;
+                                Console.WriteLine(promedio);
+                            }
+                            else
+                            {
+                                Console.WriteLine("No hay misiones.");
+                            }
+                        }
                         break;
                     case 7:
                         Console.Write("Ingrese el mapa que quieras buscar : ");
