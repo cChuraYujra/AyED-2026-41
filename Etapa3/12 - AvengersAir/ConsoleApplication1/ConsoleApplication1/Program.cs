@@ -9,7 +9,7 @@ namespace ConsoleApplication1
     class Program
     {
         static void Main(string[] args)
-        {            
+        {
             //Variables de las columnas
             int NumeroDeAsiento = 0;
             int TipoDeAsiento = 1;
@@ -40,20 +40,48 @@ namespace ConsoleApplication1
             //FIN
 
             //Matriz/ces
-            object[,] Asientos = new object[80          , 8];
-            //FIN
+            int[,] Asientos = new int[80, 8];
+            int[,] Tablita = new int[80, 3];
+            //FIN            
 
-            for(int i = 0; i < Asientos.GetLength(0); i++)
+            for (int i = 0; i < Tablita.GetLength(0); i++)
             {
-                for(int j = 0; j <= TipoDeAsiento; j++)
+                for (int j = 0; j < Tablita.GetLength(1); j++)
                 {
-                    Asientos[i, Nro_Asiento] = contador;
-                    contador++;
+                    Tablita[i, 0] = i + 1;
+                    if (Tablita[i, 0] > 0 && Tablita[i, 0] < 40)
+                    {
+                        Tablita[i, 1] = 0;
+                    }
+                    else if (Tablita[i, 0] >= 40 && Tablita[i, 0] <= 43)
+                    {
+                        Tablita[i, 1] = 1;
+                    }
+                    else
+                    {
+                        Tablita[i, 1] = 2;
+                    }
                 }
             }
-
-
-
+            for (int i = 0; i < Asientos.GetLength(0); i++)
+            {
+                for (int j = 0; j < Asientos.GetLength(1); j++)
+                {
+                    Asientos[i, 0] = i + 1;
+                    if (Asientos[i, 0] > 0 && Asientos[i, 0] < 40)
+                    {
+                        Asientos[i, 1] = 0;
+                    }
+                    else if (Asientos[i, 0] >= 40 && Asientos[i, 0] <= 43)
+                    {
+                        Asientos[i, 1] = 1;
+                    }
+                    else
+                    {
+                        Tablita[i, 1] = 2;
+                    }
+                }
+            }
 
             do
             {
@@ -64,7 +92,39 @@ namespace ConsoleApplication1
                 switch (opcion)
                 {
                     case 1:
-                        
+                        Console.WriteLine(" Nro | Tipo | Ocupado");
+                        for (int i = 0; i < Tablita.GetLength(0); i++)
+                        {
+                            for (int j = 0; j < Tablita.GetLength(1); j++)
+                            {
+                                if (Tablita[i, 2] == 0)
+                                {
+                                    Console.Write(Tablita[i, j] + "\t");
+                                }
+                            }
+                            Console.WriteLine();
+                        }
+                        Console.WriteLine("-----------------------");
+                        Console.Write("Elija un asiento : ");
+                        int AsientoSeleccionado = int.Parse(Console.ReadLine());
+                        if (AsientoSeleccionado < 1 || AsientoSeleccionado >= 80)
+                        {
+                            while(AsientoSeleccionado < 1 || AsientoSeleccionado >= 80)
+                            {
+                                Console.WriteLine("Este asiento NO EXISTE. Intentelo de nuevo");
+                                Console.Write("Elija un asiento : ");
+                                AsientoSeleccionado = int.Parse(Console.ReadLine());
+                            }
+                        }
+                        Console.Clear();
+                        Console.WriteLine("Ingrese sus datos personales.");
+                        for (int j = 0; j < Asientos.GetLength(1); j++)
+                        {
+                            Console.Write("Nombre : ");
+                            Name = Console.ReadLine();
+                            Asientos[AsientoSeleccionado, j] = Name;
+                        }
+                        Console.ReadKey();
                         break;
                     case 2:
                         break;

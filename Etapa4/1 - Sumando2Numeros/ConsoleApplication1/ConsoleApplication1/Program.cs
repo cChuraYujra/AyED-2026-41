@@ -18,9 +18,9 @@ namespace ConsoleApplication1
             Console.WriteLine(a + " + " + b + " = " + Suma(a, b));
             Console.ReadKey();
         }
-        static int Suma(int num, int num2)
+        static int Suma(int a, int b)
         {
-            return num + num2;
+            return a + b;
         }
     }
 }
