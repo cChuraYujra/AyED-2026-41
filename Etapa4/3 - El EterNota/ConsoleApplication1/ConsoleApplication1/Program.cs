@@ -11,7 +11,17 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
             int opcion;
-            int[,] Refugios = new int[20, 5];
+
+            //Matriz
+            int[,] refugios = new int[20, 5];
+
+            //Variables útiles de la matriz
+            int id = 0;
+            int capacidad = 1;
+            int suministros = 2;
+            int zona = 3;
+            int ocupado = 4;
+
             int contador = 0;
             do
             {
@@ -30,7 +40,8 @@ namespace ConsoleApplication1
                 switch (opcion)
                 {
                     case 1:
-                        AñadirRefugio(Refugios[20, 5], contador);
+                        añadirRefugio(refugios, contador);
+                        contador++;
                         break;
                     case 2:
                         // Lógica para mostrar todos los refugios
@@ -61,8 +72,9 @@ namespace ConsoleApplication1
                 Console.ReadKey();
             } while (opcion != 8);
         }
-        static 
+        static void añadirRefugio(int [,] refugios, int contador)
         {
+
         }
     }
 }

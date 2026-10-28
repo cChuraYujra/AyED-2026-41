@@ -1,0 +1,71 @@
+Mate1
+capacidad = 200
+radio = 4
+altura = 10
+Material = "Madera"
+EstaLaqueado = true
+tienebombilla = true
+CAntAgua= 0
+
+Cebar(): void
+Tomar(): void
+
+Mate2:
+radio = 2
+altura = 12
+Material = "Acero"
+Capacidad = 20
+Estalaqueateado = false
+TieneBombilla = false
+CantAgua = 0
+
+Cebar(): void
+Tomar(): void
+
+Mate3:
+Radio = 4
+Altura = 10
+Material = "Porcelana"
+CApacidad = 220
+Estalaqueado = false
+TieneBombilla= false
+CantAgua = 0
+
+Cebar(): void
+Tomar(): void
+
+Mate4
+radio = 2
+Altura 9
+Material = "Acero"
+Capacidad = 140
+EstaLaqueado = false
+TieneBombilla = true
+CantAgua = 0
+
+Cebar(): void
+Tomar(): void
+
+Mate 5
+Radio = 4
+Altura = 10
+Material = "vidrio y forrado de plastico"
+Capacidad = 200
+EstaLaqueado = false
+TieneBombilla = false
+CAntAgua = 2ml
+
+Cebar(): void
+Tomar(): void
+
+MAte6
+Radio = 2
+Altura = 6
+Material = "Acero"
+Capacidad = 80
+EstaLaqueado = false
+TieneBombilla = false
+CAntAgua = 0
+
+Cebar(): void
+Tomar(): void
