@@ -10,14 +10,77 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
+            Refugio r101 = new Refugio(101, 20, 12);
+
+            Refugio r102 = new Refugio(102, 15, 10);
+
+            Refugio r103 = new Refugio(103, 30, 25);
+
+            Console.WriteLine("=== SISTEMAS DE REFUGIOS ===\n");
+            r101.mostrarInformacion();
+
+            r102.mostrarInformacion();
+
+            r103.mostrarInformacion();
+
+            Console.WriteLine("=== RESUMEN ===\n");
+
+            Console.WriteLine("Personas alojadas: " + (r101.getpipolAlojadas() + r102.getpipolAlojadas() + r103.getpipolAlojadas()));
+            Console.WriteLine("Lugares disponibles: " + (r101.calcularDisponible() + r102.calcularDisponible() + r103.calcularDisponible()));
+            Console.Write("Refugio con mayor capacidad: ");
+            if (r101.getcapaMax() > r102.getcapaMax() && r101.getcapaMax() > r103.getcapaMax())
+            {
+                Console.WriteLine(r101.getnumero());
+            }
+            else if(r102.getcapaMax() > r101.getcapaMax() && r102.getcapaMax() > r103.getcapaMax())
+            {
+                Console.WriteLine(r102.getnumero());
+            }
+            else
+            {
+                Console.WriteLine(r103.getnumero());
+            }
+
+            Console.ReadKey();
         }
     }
     class Refugio
     {
-        int numero;
-        int capaMax;
-        int pipolAojadas;
+        private int numero;
+        private int capaMax;
+        private int pipolAlojadas;
 
+        public Refugio(int numero, int capaMax, int pipolAlojadas)
+        {
+            this.numero = numero;
+            this.capaMax = capaMax;
+            this.pipolAlojadas = pipolAlojadas;
+        }
 
+        public int calcularDisponible()
+        {
+            int disponibles = capaMax - pipolAlojadas;
+            return disponibles;
+        }
+
+        public void mostrarInformacion()
+        {
+            Console.WriteLine("Refugio " + numero);
+            Console.WriteLine("Capacidad: " + capaMax);
+            Console.WriteLine("Alojados: " + pipolAlojadas);
+            Console.WriteLine("Disponible: " + (calcularDisponible()) + "\n");
+        }
+        public int getpipolAlojadas()
+        {
+            return pipolAlojadas;
+        }
+        public int getcapaMax()
+        {
+            return capaMax;
+        }
+        public int getnumero()
+        {
+            return numero;
+        }
     }
 }
