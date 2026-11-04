@@ -29,7 +29,7 @@ namespace _3_HotSale
             Array.Reverse(CantProductos);
             foreach (double productos in CantProductos)
             {               
-                Console.Write(productos + " , ");
+                Console.Write(productos + " \t");
             }                     
             Console.ReadKey();
         }

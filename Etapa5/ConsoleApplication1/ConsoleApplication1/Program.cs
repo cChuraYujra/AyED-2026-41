@@ -29,6 +29,8 @@ namespace ConsoleApplication1
 
             mateChico.Cebar();
             mateChico.Tomar(20);
+            Console.WriteLine(mateFran);
+            Console.ReadLine();
         }
     }
     class Mate

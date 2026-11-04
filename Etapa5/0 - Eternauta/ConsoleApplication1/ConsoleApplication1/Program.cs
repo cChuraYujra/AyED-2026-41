@@ -25,9 +25,9 @@ namespace ConsoleApplication1
 
             Console.WriteLine("=== RESUMEN ===\n");
 
-            Console.WriteLine("Personas alojadas: " + (r101.getpipolAlojadas() + r102.getpipolAlojadas() + r103.getpipolAlojadas()));
-            Console.WriteLine("Lugares disponibles: " + (r101.calcularDisponible() + r102.calcularDisponible() + r103.calcularDisponible()));
-            Console.Write("Refugio con mayor capacidad: ");
+            Console.WriteLine("Personas alojadas: \t" + (r101.getpipolAlojadas() + r102.getpipolAlojadas() + r103.getpipolAlojadas()));
+            Console.WriteLine("Lugares disponibles: \t" + (r101.calcularDisponible() + r102.calcularDisponible() + r103.calcularDisponible()));
+            Console.Write("Refugio con mayor capacidad: \t");
             if (r101.getcapaMax() > r102.getcapaMax() && r101.getcapaMax() > r103.getcapaMax())
             {
                 Console.WriteLine(r101.getnumero());
@@ -65,10 +65,10 @@ namespace ConsoleApplication1
 
         public void mostrarInformacion()
         {
-            Console.WriteLine("Refugio " + numero);
-            Console.WriteLine("Capacidad: " + capaMax);
-            Console.WriteLine("Alojados: " + pipolAlojadas);
-            Console.WriteLine("Disponible: " + (calcularDisponible()) + "\n");
+            Console.WriteLine("Refugio \t" + numero);
+            Console.WriteLine("Capacidad: \t" + capaMax);
+            Console.WriteLine("Alojados: \t" + pipolAlojadas);
+            Console.WriteLine("Disponible: \t" + (calcularDisponible()) + "\n");
         }
         public int getpipolAlojadas()
         {
